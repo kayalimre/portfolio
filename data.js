@@ -15,12 +15,12 @@ const DATA = {
     ],
     tagline:
       "I build and operate reliable Java / Spring Boot backends — from legacy modernisation to cloud-native platforms on Kubernetes — and use agentic AI tooling to ship them faster.",
-    location: "Istanbul, Türkiye",
     avatar: "", // optional photo path, e.g. "assets/me.jpg" — initials are shown when empty
     initials: "AEK",
   },
 
   social: {
+    email: "kayaaliemre@yahoo.com",
     github: "https://github.com/kayalimre",
     linkedin: "https://www.linkedin.com/in/ali-emre-kaya-95a0a797/",
   },
@@ -84,7 +84,6 @@ const DATA = {
   experience: [
     {
       company: "adesso Turkey",
-      location: "Istanbul · Remote",
       period: "Aug 2021 — Present",
       roles: [
         {
@@ -120,7 +119,6 @@ const DATA = {
     },
     {
       company: "Turkish Airlines",
-      location: "Istanbul",
       period: "Jun 2018 — Aug 2021",
       roles: [
         {
@@ -145,7 +143,6 @@ const DATA = {
     },
     {
       company: "EKS Software Consultancy",
-      location: "Türkiye",
       period: "Nov 2017 — Jun 2018",
       roles: [
         {
@@ -158,7 +155,6 @@ const DATA = {
     },
     {
       company: "Internships",
-      location: "Türkiye",
       period: "2016 — 2017",
       roles: [
         { title: "Software Developer Intern · PİTON R&D", period: "Sep 2017 — Oct 2017", points: [] },
