@@ -1,6 +1,5 @@
 /* ==========================================================================
    PORTFOLIO DATA — edit only this file to update the site content.
-   Client names are intentionally anonymised (industry + scope only).
    ========================================================================== */
 
 const DATA = {
@@ -29,14 +28,10 @@ const DATA = {
   about: {
     paragraphs: [
       "I'm a <strong>Senior Software Engineer and AI Native Architect</strong> with <strong>10 years in IT</strong> (since 2016), working across <strong>automotive, aviation, banking and manufacturing</strong> domains.",
-      "Today I develop and operate a regulatory data platform for a global automotive manufacturer — <strong>Java 21, Spring Boot 3, PostgreSQL</strong> on <strong>Kubernetes</strong> with GitOps (ArgoCD, GitHub Actions) — and migrate services from on-premise to <strong>Azure</strong> and <strong>OCI</strong>.",
-      "Before that I re-engineered legacy banking components into Spring Boot microservices, built supply-chain SaaS features and modernised airline agency platforms. I care about REST API design, testing and code quality (SonarQube, Fortify), and I'm a <strong>Certified Claude Architect</strong> who applies agentic AI tooling (Claude Code, MCP) in daily engineering work.",
+      "Today I work on <strong>BMW Group's EC&amp;OTD programme</strong>, developing and operating the WLTP emissions &amp; consumption platform — <strong>Java 21, Spring Boot 3, PostgreSQL</strong> on <strong>Kubernetes</strong> with GitOps (ArgoCD, GitHub Actions) — and migrate services from on-premise to <strong>Azure</strong> and <strong>OCI</strong>.",
+      "Before that I built the <strong>material.one</strong> supply-chain platform, re-engineered <strong>ING Bank</strong>'s legacy banking components into Spring Boot microservices and modernised <strong>Turkish Airlines</strong>' agency platforms. I care about REST API design, testing and code quality (SonarQube, Fortify), and I'm a <strong>Certified Claude Architect</strong> who applies agentic AI tooling (Claude Code, MCP) in daily engineering work.",
     ],
-    stats: [
-      { value: "10+", label: "Years in IT" },
-      { value: "7", label: "Major projects" },
-      { value: "4", label: "Industries" },
-    ],
+    itSince: 2016, // stats (years, projects, industries) are computed from the data below
     education: [
       { school: "Istanbul University", degree: "M.Sc., Intelligent Transportation Systems", period: "2019 — 2022" },
       { school: "Anadolu University", degree: "B.Sc., Computer Engineering", period: "2012 — 2017" },
@@ -85,118 +80,150 @@ const DATA = {
     },
   ],
 
+  // Grouped by employer; each role can reference the project(s) it was on.
   experience: [
     {
-      role: "Senior Software Engineer",
       company: "adesso Turkey",
-      period: "Jan 2026 — Present",
-      points: [
-        "Backend architecture & development for a global automotive manufacturer's regulatory platform that generates vehicle-specific CO₂, consumption, range and official technical data under WLTP.",
-        "Microservices with Java 11/17/21, Spring Boot, Quarkus and Payara; database versioning with Flyway for auditability and traceability.",
-        "Docker, Kubernetes & GitOps (ArgoCD, GitHub Actions); migrating services to Azure and OCI; BDD/integration tests with Cucumber.",
-        "Bringing an AI-native workflow to the team — Claude Code and MCP integrations for analysis, documentation and delivery.",
+      location: "Istanbul · Remote",
+      period: "Aug 2021 — Present",
+      roles: [
+        {
+          title: "Senior Software Engineer",
+          period: "Jan 2026 — Present",
+          project: "BMW Group — EC&OTD (Emission & Consumption)",
+          points: [
+            "Backend architecture & development of systems that generate vehicle-specific CO₂, consumption, range and official technical data under WLTP.",
+            "Microservices with Java 11/17/21, Spring Boot, Quarkus and Payara; Flyway-based schema versioning for auditability and traceability.",
+            "Docker, Kubernetes & GitOps (ArgoCD, GitHub Actions); migrating services to Azure and OCI; BDD/integration tests with Cucumber.",
+            "Driving an AI-native workflow in the team with Claude Code and MCP integrations for analysis, documentation and delivery.",
+          ],
+        },
+        {
+          title: "Senior Software Engineer",
+          period: "Oct 2022 — Jan 2026",
+          project: "material.one",
+          points: [
+            "Spring Boot microservice development for a supply-chain sampling platform used by OEMs, suppliers and laboratories.",
+            "Code reviews, monitoring & observability on Azure and ownership of the release process in a Scrum team.",
+          ],
+        },
+        {
+          title: "Senior Software Engineer · Full Stack Developer",
+          period: "Aug 2021 — Nov 2022",
+          project: "ING Bank — Transformation Project",
+          points: [
+            "Re-engineered legacy PL/SQL, C# and C / .NET logic as Java 11 / Spring Boot microservices for mobile & online banking, released on OpenShift.",
+            "New logging mechanism with Spring AOP and Kibana; TDD/BDD and Swagger docs; resolved Fortify and SonarQube findings.",
+          ],
+        },
       ],
     },
     {
-      role: "Senior Software Engineer",
-      company: "adesso Turkey",
-      period: "Oct 2022 — Jan 2026",
-      points: [
-        "Spring Boot microservices for a supply-chain sampling SaaS connecting manufacturers, suppliers and laboratories.",
-        "Code reviews, monitoring & observability on Azure and ownership of the release process in a Scrum team.",
-      ],
-    },
-    {
-      role: "Senior Software Engineer / Full Stack Developer",
-      company: "adesso Turkey",
-      period: "Aug 2021 — Nov 2022",
-      points: [
-        "Retail-banking transformation: legacy PL/SQL, C# and C / .NET logic re-engineered as Java 11 / Spring Boot microservices on OpenShift.",
-        "New logging mechanism with Spring AOP and Kibana; TDD/BDD, Swagger docs; resolved Fortify and SonarQube findings.",
-      ],
-    },
-    {
-      role: "Full Stack Application Programmer",
-      company: "Turkish Airlines Technology",
-      period: "Jan 2021 — Aug 2021",
-      points: [
-        "Continued re-platforming of a ~15-year-old agency reservation application with Spring, REST and Vue.js.",
-        "Application security (Fortify) and SonarQube bug fixing.",
-      ],
-    },
-    {
-      role: "Java Software Specialist",
       company: "Turkish Airlines",
-      period: "Jun 2018 — Jan 2021",
-      points: [
-        "Built an agency sales-development platform with Spring, Hibernate, Spring Batch, Spring Security and Vue.js.",
-        "Re-wrote the agency reservation web app with Jersey/REST and Vue.js; integrated Graylog and Swagger.",
+      location: "Istanbul",
+      period: "Jun 2018 — Aug 2021",
+      roles: [
+        {
+          title: "Full Stack Application Programmer · Turkish Airlines Technology",
+          period: "Jan 2021 — Aug 2021",
+          project: "Quickres 5.0",
+          points: [
+            "Migrated pages of a ~15-year-old agency reservation application to a new Spring / REST / Vue.js stack and built new features.",
+            "Application security (Fortify) and SonarQube bug fixing.",
+          ],
+        },
+        {
+          title: "Java Software Specialist",
+          period: "Jun 2018 — Jan 2021",
+          project: "ASGO · Quickres 5.0",
+          points: [
+            "Built the agency sales-development platform with Spring, Hibernate, Spring Batch, Spring Security and Vue.js.",
+            "Started the Quickres 5.0 re-write with Jersey/REST and Vue.js; integrated Graylog and Swagger.",
+          ],
+        },
       ],
     },
     {
-      role: "Software Developer",
       company: "EKS Software Consultancy",
+      location: "Türkiye",
       period: "Nov 2017 — Jun 2018",
-      points: [
-        "Accounting systems with ASP.NET and MS SQL Server, including a mobile e-signature module.",
+      roles: [
+        {
+          title: "Software Developer",
+          period: "Nov 2017 — Jun 2018",
+          project: "EdcSistem",
+          points: ["Accounting systems with ASP.NET and MS SQL Server, including a mobile e-signature module."],
+        },
       ],
     },
     {
-      role: "Internships",
-      company: "PİTON R&D · KoçSistem",
+      company: "Internships",
+      location: "Türkiye",
       period: "2016 — 2017",
-      points: ["Software development intern (PİTON R&D) and network support intern (KoçSistem)."],
+      roles: [
+        { title: "Software Developer Intern · PİTON R&D", period: "Sep 2017 — Oct 2017", points: [] },
+        { title: "Network Support Intern · KoçSistem", period: "Aug 2016 — Sep 2016", points: [] },
+      ],
     },
   ],
 
   projects: [
     {
-      title: "Automotive Emissions & Technical Data Platform",
+      title: "EC&OTD — EVE Platform",
+      client: "BMW Group",
       domain: "Automotive",
       period: "2025 — Present",
-      featured: true,
+      role: "Software Engineer · AI Expert · DevOps",
       description:
-        "Core platform that computes vehicle-specific CO₂, consumption and range values under WLTP regulation and distributes them to downstream systems. Backend development, cloud migration, GitOps operations, identity-realm migration and production incident analysis.",
+        "EVE computes vehicle-specific CO₂, consumption and range values under WLTP and feeds downstream systems such as Official Technical Data and vehicle configuration. Backend development, cloud migration, GitOps releases, Keycloak realm migration and production incident analysis.",
       tags: ["Java 21", "Spring Boot 3", "Quarkus", "PostgreSQL", "Kubernetes", "ArgoCD", "Flyway", "Cucumber", "Azure", "OCI"],
     },
     {
-      title: "Supply-Chain Sampling SaaS",
+      title: "material.one",
+      client: "material.one AG",
       domain: "Manufacturing",
       period: "2022 — 2025",
-      featured: true,
+      role: "Software Engineer",
       description:
-        "Digital platform connecting manufacturers, suppliers and laboratories to exchange sampling and test data in uniform formats. Feature development on a Spring Boot microservice architecture, code reviews, Azure monitoring and release ownership.",
+        "Digitises industrial sampling across the supply chain: OEMs, suppliers and laboratories exchange test plans and results on one platform in uniform formats. Feature development on Spring Boot microservices, code reviews, Azure observability and release ownership.",
       tags: ["Java 17", "Spring Boot 3", "Microservices", "HATEOAS", "Maven", "Azure"],
     },
     {
-      title: "Digital Banking Backend Transformation",
+      title: "ING Bank Transformation",
+      client: "ING Bank",
       domain: "Banking",
       period: "2021 — 2022",
-      featured: true,
+      role: "Senior Software Engineer",
       description:
-        "Re-engineering of legacy PL/SQL, C# and C components into Java microservices for mobile and online banking channels, running on OpenShift with centralised logging.",
+        "Modernisation of the mobile and online banking backend: legacy PL/SQL, C# and C components re-engineered as Java microservices on OpenShift with centralised logging.",
       tags: ["Java 11", "Spring Boot", "OpenShift", "Oracle SQL", "TDD", "Kibana"],
     },
     {
-      title: "Agency Reservation Platform Re-write",
+      title: "Quickres 5.0",
+      client: "Turkish Airlines",
       domain: "Aviation",
       period: "2020 — 2021",
+      role: "Software Engineer",
       description:
-        "Transformed a ~15-year-old agency reservation web application into a modern REST-based application with a Vue.js frontend.",
+        "Re-platforming of a ~15-year-old agency reservation web application into a modern REST-based application with a Vue.js frontend, global exception handling, Graylog and Swagger.",
       tags: ["Java 8", "JAX-RS", "Spring", "Vue.js", "Graylog", "Swagger"],
     },
     {
-      title: "Agency Sales-Force Automation",
+      title: "ASGO — Agency Sales Development",
+      client: "Turkish Airlines",
       domain: "Aviation",
       period: "2018 — 2020",
+      role: "Software Engineer",
       description:
-        "Platform that helps agencies offer more services for ticket sales, with automated batch services and a secure authentication layer.",
+        "Sales-force automation that helps agencies offer more services for ticket sales, with reusable Spring Batch jobs and a Spring Security authentication layer.",
       tags: ["Java", "Hibernate", "Spring Batch", "Spring Security", "Vue.js", "Oracle SQL"],
     },
     {
-      title: "Accounting System & Mobile E-Signature",
+      title: "EdcSistem",
+      client: "EKS Software Consultancy",
       domain: "Finance",
       period: "2017 — 2018",
+      role: "Software Engineer · Analyst",
       description:
         "Accounting software with an integrated e-signature module for signing documents from mobile phones.",
       tags: ["ASP.NET", "jQuery", "MS SQL"],
